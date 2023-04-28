@@ -37,28 +37,6 @@ const ListSubheaderStyled = (props: ListSubheaderProps) => (
   />
 );
 
-// const ListItemStyled = (props: ListItemButtonProps) => <ListItemButton sx={(theme) => ({
-//   whiteSpace: 'nowrap',
-//   marginBottom: '2px',
-//   padding: '8px 10px',
-//   borderRadius: '8px',
-//   color:
-//     theme.palette.text.secondary,
-//   paddingLeft: '10px',
-//   '&:hover': {
-//     backgroundColor: theme.palette.primary.light,
-//     color: theme.palette.primary.main,
-//   },
-//   '&.Mui-selected': {
-//     color: 'white',
-//     backgroundColor: theme.palette.primary.main,
-//     '&:hover': {
-//       backgroundColor: theme.palette.primary.main,
-//       color: 'white',
-//     },
-//   },
-// })} LinkComponent={NavLink} {...props} />
-
 interface MyListItemProps {
   icon: ReactNode;
   title: ReactNode;

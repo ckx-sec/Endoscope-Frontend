@@ -7,25 +7,23 @@ import { CardActionArea } from '@mui/material';
 
 const APKInfoCard= () =>{
   return (
-    // <DashboardCard title="weqw">
-    //     ccs
-    // </DashboardCard>
+    
     <Card >
       <CardActionArea>
         <CardMedia
           component="img"
-          height="215"
+          height="275"
           image="/apklogotest.png"
           alt="apkinfo"
         />
-        <CardContent>
+        {/* <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             APK Info
           </Typography>
           <Typography variant="body2" color="text.secondary">
             there is something
           </Typography>
-        </CardContent>
+        </CardContent> */}
       </CardActionArea>
     </Card>
   );

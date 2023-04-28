@@ -1,5 +1,5 @@
-import React from "react";
-import { Grid, Box } from "@mui/material";
+import React, { useState } from "react";
+import { Grid, Box, Paper } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import InputField from "./components/InputField";
 import PackageCard from "./components/PackageCard";
@@ -29,21 +29,30 @@ const PageContainer = ({
 );
 
 const Describer = () => {
+  const [activities, setActivities] = useState<Array<string> | null>(null);
+  const [packageName, setPackageName] = useState<string | null>(null);
   return (
     <PageContainer title="Describer" description="this is Describer">
       <Box>
-        <Grid container spacing={3}>
-          <Grid item xs={12} lg={8}>
-            <InputField />
+        <Grid container spacing={3} height="100%">
+          <Grid item xs={12} lg={7}>
+  
+              <InputField
+                setActivities={setActivities}
+                setPackageName={setPackageName}
+              />
+            
+          </Grid>
+          <Grid item xs={12} lg={5}>
+            <Paper elevation={9} sx={{ height: "100%" }}>
+              <APKInfoCard />
+            </Paper>
           </Grid>
           <Grid item xs={12} lg={4}>
-            <APKInfoCard />
+            <PackageCard packageName={packageName ?? null} />
           </Grid>
-          <Grid item xs={12} lg={6}>
-            <PackageCard />
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <ActivityCard />
+          <Grid item xs={12} lg={8}>
+            <ActivityCard activities={activities ?? null} />
           </Grid>
         </Grid>
       </Box>
