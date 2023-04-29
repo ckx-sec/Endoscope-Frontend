@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Grid, Box, Paper } from "@mui/material";
+import { Grid, Box, Paper, Button, Alert } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import InputField from "./components/InputField";
 import PackageCard from "./components/PackageCard";
 import ActivityCard from "./components/ActivityCard";
 import APKInfoCard from "./components/APKInfoCard";
-
 // components
 // import VerticalStepper from "./components/VerticalStepper";
 
@@ -31,17 +30,17 @@ const PageContainer = ({
 const Describer = () => {
   const [activities, setActivities] = useState<Array<string> | null>(null);
   const [packageName, setPackageName] = useState<string | null>(null);
+  const [flag, setFlag] = useState<boolean | null>(null);
   return (
     <PageContainer title="Describer" description="this is Describer">
       <Box>
         <Grid container spacing={3} height="100%">
           <Grid item xs={12} lg={7}>
-  
-              <InputField
-                setActivities={setActivities}
-                setPackageName={setPackageName}
-              />
-            
+            <InputField
+              setActivities={setActivities}
+              setPackageName={setPackageName}
+              setFlag={setFlag}
+            />
           </Grid>
           <Grid item xs={12} lg={5}>
             <Paper elevation={9} sx={{ height: "100%" }}>

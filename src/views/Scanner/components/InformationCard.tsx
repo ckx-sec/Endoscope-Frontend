@@ -2,106 +2,146 @@ import {
   Box,
   Card,
   CardContent,
-  CircularProgress,
+  Chip,
+  Grid,
+  Tooltip,
   Typography,
 } from "@mui/material";
-import { alignProperty } from "@mui/material/styles/cssUtils";
 import DashboardCard from "../../../components/shared/DashboardCard";
 
-const InformationCard = () => {
+interface message {
+  keyinfo: string;
+  apkname: string;
+  filename: string;
+}
+interface InformationCardProps {
+  scanMessage: Array<message> | null;
+}
+const InformationCard = ({ scanMessage }: InformationCardProps) => {
+  if (scanMessage != null) {
+    return (
+      <Grid container spacing={3}>
+        <Grid item xs={12} lg={6}>
+          <DashboardCard title="AndroidManifest.xml">
+            {scanMessage.map((message) => {
+              if (message["filename"] === "AndroidManifest.xml") {
+                return (
+                  <Tooltip title={message["keyinfo"]} placement="right-start">
+                    <Chip
+                      sx={{
+                        px: "4px",
+                        backgroundColor: "secondary.main",
+                        color: "#fff",
+                        margin: "3px",
+                      }}
+                      size="small"
+                      label={message["keyinfo"]}
+                    ></Chip>
+                  </Tooltip>
+                );
+              }
+            })}
+          </DashboardCard>
+        </Grid>
+        <Grid item xs={12} lg={6}>
+          <DashboardCard title="Resource.arsc">
+            {scanMessage.map((message) => {
+              if (message["filename"] === "Resource.arsc") {
+                return (
+                  
+                  <Tooltip title={message["keyinfo"]} placement="right-start">
+                    <Chip
+                      sx={{
+                        px: "4px",
+                        backgroundColor: "secondary.main",
+                        color: "#fff",
+                        margin: "3px",
+                      }}
+                      size="small"
+                      label={message["keyinfo"]}
+                    ></Chip>
+                  </Tooltip>
+                );
+              }
+            })}
+          </DashboardCard>
+        </Grid>
+
+        <Grid item xs={12} lg={6}>
+          <DashboardCard title="Classes.dex">
+            {scanMessage.map((message) => {
+              if (message["filename"] === "Classes.dex") {
+                return (
+                  <Tooltip title={message["keyinfo"]} placement="right-start">
+                    <Chip
+                      sx={{
+                        px: "4px",
+                        backgroundColor: "secondary.main",
+                        color: "#fff",
+                        margin: "3px",
+                      }}
+                      size="small"
+                      label={message["keyinfo"]}
+                    ></Chip>
+                  </Tooltip>
+                );
+              }
+            })}
+          </DashboardCard>
+        </Grid>
+        <Grid item xs={12} lg={6}>
+          <DashboardCard title="Configuration">
+            {scanMessage.map((message) => {
+              if (message["filename"] === "Configuration") {
+                return (
+                  <Tooltip title={message["keyinfo"]} placement="right-start">
+                    <Chip
+                      sx={{
+                        px: "4px",
+                        backgroundColor: "secondary.main",
+                        color: "#fff",
+                        margin: "3px",
+                      }}
+                      size="small"
+                      label={message["keyinfo"]}
+                    ></Chip>
+                  </Tooltip>
+                );
+              }
+            })}
+          </DashboardCard>
+        </Grid>
+      </Grid>
+    );
+  }
   return (
-    <DashboardCard title="Cognito IdentityPoolId Map">
-      <Box border={"0px solid black"} height="600px" position="relative">
-        <Card
-          elevation={16}
-          sx={{
-            position: "absolute",
-            top: "10px",
-            left: "100px",
-            height: "150px",
-            width: "200px",
-            border: "0.5px solid #49BEFF",
-          }}
-        >
-          <CardContent>
-            <Typography variant="h6">{"AndroidManifest"}</Typography>
-          </CardContent>
-        </Card>
-        <Card
-          elevation={16}
-          sx={{
-            position: "absolute",
-            top: "10px",
-            left: "350px",
-            height: "150px",
-            width: "200px",
-            border: "0.5px solid #49BEFF",
-          }}
-        >
-          <CardContent>
-            <Typography variant="h6">{"Reources.arsc"}</Typography>
-          </CardContent>
-        </Card>
-        <Card
-          elevation={16}
-          sx={{
-            position: "absolute",
-            top: "220px",
-            left: "100px",
-            height: "350px",
-            width: "350px",
-            border: "0.5px solid #49BEFF",
-          }}
-        >
-          <CardContent>
-            <Typography variant="h6">{"APKINFO"}</Typography>
-          </CardContent>
-        </Card>
-        <Card
-          elevation={16}
-          sx={{
-            position: "absolute",
-            top: "220px",
-            left: "520px",
-            height: "150px",
-            width: "200px",
-            border: "0.5px solid #49BEFF",
-          }}
-        >
-          <CardContent>
-            <Typography variant="h6">{"Classes.dex"}</Typography>
-          </CardContent>
-        </Card>
-        <Card
-          elevation={16}
-          sx={{
-            position: "absolute",
-            top: "420px",
-            left: "520px",
-            height: "150px",
-            width: "200px",
-            border: "0.5px solid #49BEFF",
-          }}
-        >
-          <CardContent>
-            <Typography variant="h6">{"Configuration"}</Typography>
-          </CardContent>
-        </Card>
-        {/* <Box border={"1px solid black"} height="150px" width="200px" sx={{position: "absolute",top: "10px",left: "300px"}}></Box> */}
-        {/* <Box
-          border={"0px solid black"}
-          height="120px"
-          width="120px"
-          justifyContent="center"
-          alignItems="center"
-          display="flex"
-          sx={{ position: "absolute", top: "0px", right: "0px" }}
-        >
-          <CircularProgress />
-          <Typography>进度显示</Typography>
-        </Box> */}
-      </Box>
-    </DashboardCard>
+    <Grid container spacing={3}>
+      <Grid item xs={12} lg={6}>
+        <DashboardCard
+          title="AndroidManifest.xml"
+          subtitle="未找到信息"
+        ></DashboardCard>
+      </Grid>
+      <Grid item xs={12} lg={6}>
+        <DashboardCard
+          title="Resource.arsc"
+          subtitle="未找到信息"
+        ></DashboardCard>
+      </Grid>
+
+      <Grid item xs={12} lg={6}>
+        <DashboardCard
+          title="Classes.dex"
+          subtitle="未找到信息"
+        ></DashboardCard>
+      </Grid>
+      <Grid item xs={12} lg={6}>
+        <DashboardCard
+          title="Configuration"
+          subtitle="未找到信息"
+        ></DashboardCard>
+      </Grid>
+    </Grid>
   );
 };
 

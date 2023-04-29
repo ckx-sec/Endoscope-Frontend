@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Box } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 
@@ -25,8 +25,13 @@ const PageContainer = ({
     {children}
   </div>
 );
-
+interface message {
+  keyinfo:string,
+  apkname:string,
+  filename:string
+}
 const Scanner = () => {
+  const [scanMessage,setScanMessage] = useState<Array<message>|null>(null);
   return (
     <PageContainer title="Scanner" description="this is Scanner">
       <Box>
@@ -34,10 +39,10 @@ const Scanner = () => {
           <Grid item xs={12} lg={9}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <InputField />
+                <InputField setScanMessage={setScanMessage}/>
               </Grid>
               <Grid item xs={12}>
-                <InformationCard />
+                <InformationCard scanMessage={scanMessage??null}/>
               </Grid>
             </Grid>
           </Grid>

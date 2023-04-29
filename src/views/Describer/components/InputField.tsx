@@ -1,10 +1,12 @@
 import {
+  Alert,
   Box,
   Button,
   Checkbox,
   FormControlLabel,
   FormGroup,
   IconButton,
+  Snackbar,
   TextField,
   Typography,
 } from "@mui/material";
@@ -18,7 +20,8 @@ interface UploadButtonProps {
 
 interface InputFieldProps {
   setActivities: (activities: Array<string> | null) => void;
-  setPackageName: (packageName:string|null)=>void;
+  setPackageName: (packageName: string | null) => void;
+  setFlag:(flag:boolean|null)=>void;
 }
 const UploadButton = ({ setFile }: UploadButtonProps) => {
   return (
@@ -34,8 +37,17 @@ const UploadButton = ({ setFile }: UploadButtonProps) => {
     </IconButton>
   );
 };
-const InputField = ({setActivities,setPackageName}:InputFieldProps) => {
+const InputField = ({ setActivities, setPackageName,setFlag }: InputFieldProps) => {
   const [file, setFile] = useState<File | null>(null);
+  const [showAlert, setShowAlert] = useState(false);
+  const [showErrorAlert, setErrorShowAlert] = useState(false);
+
+  const handleAlertClose = () => {
+    setShowAlert(false);
+  };
+  const handleErrorAlertClose = () => {
+    setErrorShowAlert(false);
+  };
   return (
     <DashboardCard title="Input Information">
       <Box
@@ -90,11 +102,11 @@ const InputField = ({setActivities,setPackageName}:InputFieldProps) => {
                   if (!response.ok) {
                     throw new Error("Network response was not ok");
                   }
-                  response.json().then(data => {
-                    setActivities(data.activities)
-                    setPackageName(data.packageName)
-                  })
-                
+                  response.json().then((data) => {
+                    setActivities(data.activities);
+                    setPackageName(data.packageName);
+                  });
+                  setShowAlert(true);
                 })
                 .then()
                 .catch((error) => {
@@ -102,12 +114,46 @@ const InputField = ({setActivities,setPackageName}:InputFieldProps) => {
                     "There was a problem with the fetch operation:",
                     error
                   );
+                  setErrorShowAlert(true);
                 });
             }
           }}
         >
           <Typography>Analysis</Typography>
         </Button>
+        <Snackbar
+          open={showAlert}
+          autoHideDuration={3000}
+          onClose={handleAlertClose}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          
+        >
+          <Alert
+            onClose={handleAlertClose}
+            severity="success"
+            sx={{ width: "100%" ,color: '#fff'}}
+            variant="filled"
+          >
+            <Typography variant="subtitle1">Success Operation</Typography>
+          </Alert>
+        </Snackbar>
+
+        <Snackbar
+          open={showErrorAlert}
+          autoHideDuration={3000}
+          onClose={handleErrorAlertClose}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          
+        >
+          <Alert
+            onClose={handleErrorAlertClose}
+            severity="error"
+            sx={{ width: "100%",color: '#fff' }}
+            variant="filled"
+          >
+            <Typography variant="subtitle1">Error Operation</Typography>
+          </Alert>
+        </Snackbar>
       </Box>
     </DashboardCard>
   );
