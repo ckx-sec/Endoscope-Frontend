@@ -64,14 +64,14 @@ const OverviewChart = () => {
     },
     xaxis: {
       categories: [
-        "16/08",
-        "17/08",
-        "18/08",
-        "19/08",
-        "20/08",
-        "21/08",
-        "22/08",
-        "23/08",
+        "APK 1",
+        "APK 2",
+        "APK 3",
+        "APK 4",
+        "APK 5",
+        "APK 6",
+        "APK 7",
+        "APK 8",
       ],
       axisBorder: {
         show: false,
@@ -85,12 +85,12 @@ const OverviewChart = () => {
 
   const seriescolumnchart = [
     {
-      name: "Eanings this month",
+      name: "Using wasm",
       data: [355, 390, 300, 350, 390, 180, 355, 390],
     },
     {
-      name: "Expense this month",
-      data: [280, 250, 325, 215, 250, 310, 280, 250],
+      name: "Using backend",
+      data: [123, 154, 163, 208, 223, 75, 143, 224],
     },
     
   ];

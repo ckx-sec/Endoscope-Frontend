@@ -1,5 +1,9 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import { baselightTheme } from "./theme/DefaultColors";
 import Root from "./routes/Root";
 import Overview from "./views/Overview/Overview";
@@ -7,6 +11,10 @@ import { HelmetProvider } from "react-helmet-async";
 import Scanner from "./views/Scanner/Scanner";
 import Describer from "./views/Describer/Describer";
 import Detector from "./views/Detector/Detector";
+import BlankLayout from "./layouts/blank/BlankLayout";
+import Error from "./views/Authentication/Error";
+import Register from "./views/Authentication/Register";
+import Login from "./views/Authentication/Login";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +41,17 @@ const router = createBrowserRouter([
         element: <Detector />,
       },
     ],
-  }
+  },
+  {
+    path: "/auth",
+    element: <BlankLayout />,
+    children: [
+      { path: "404", element: <Error /> },
+      { path: "/auth/register", element: <Register /> },
+      { path: "/auth/login", element: <Login /> },
+      { path: "*", element: <Navigate to="/auth/404" /> },
+    ],
+  },
 ]);
 
 function App() {

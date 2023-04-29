@@ -63,129 +63,101 @@ const IoTTable = ({ iotTable }: IoTTableProps) => {
   if (iotTable != null) {
     const { iotClient, poolid, endpoint, policy, thing, topicRule } = iotTable;
     return (
-      <DashboardCard title="IoT Service">
-        <Typography variant="subtitle1">Endpoint :</Typography>
-        <Chip
-          sx={{
-            px: "4px",
-            backgroundColor: "success.main",
-            color: "#fff",
-            margin: "3px",
-          }}
-          size="small"
-          label={iotTable.endpoint}
-        ></Chip>
-        <Typography variant="subtitle1">IdentityPoolID :</Typography>
-        <Chip
-          sx={{
-            px: "4px",
-            backgroundColor: "success.main",
-            color: "#fff",
-            margin: "3px",
-          }}
-          size="small"
-          label={iotTable.poolid}
-        ></Chip>
-        <Box justifyContent="center" alignContent="center">
+      <Box>
+        <DashboardCard title="IoT Service">
+          <Typography variant="subtitle1">Endpoint :</Typography>
+          <Chip
+            sx={{
+              px: "4px",
+              backgroundColor: "success.main",
+              color: "#fff",
+              margin: "3px",
+            }}
+            size="small"
+            label={iotTable.endpoint}
+          ></Chip>
+          <Typography variant="subtitle1">IdentityPoolID :</Typography>
+          <Chip
+            sx={{
+              px: "4px",
+              backgroundColor: "success.main",
+              color: "#fff",
+              margin: "3px",
+            }}
+            size="small"
+            label={iotTable.poolid}
+          ></Chip>
+        </DashboardCard>
+        <Box justifyContent="center" alignContent="center" mt="30px">
           <Grid container spacing={3}>
             <Grid item xs={12} lg={4}>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignContent: "center",
-                  justifyContent: "center",
-                  padding:"10px"
-                }}
-              >
-                <Typography variant="subtitle2" fontWeight={600}>
-                  Policy Permission
-                </Typography>
-              </Box>
-
-              <Table>
-                <TableBody>
-                  {Object.entries(policy).map(([key, value]) => (
-                    <TableRow key={key}>
-                      <TableCell>
-                        <Typography
-                          sx={{
-                            fontSize: "15px",
-                            fontWeight: "500",
-                          }}
-                        >
-                          {key}
-                        </Typography>
-                      </TableCell>
-                      <TableCell>
-                        <Typography
-                          sx={{
-                            fontSize: "15px",
-                            fontWeight: "500",
-                          }}
-                        >
-                          {value ? "✅" : "❌"}
-                        </Typography>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+              <DashboardCard title="Policy Permission">
+                <Table>
+                  <TableBody>
+                    {Object.entries(policy).map(([key, value]) => (
+                      <TableRow key={key}>
+                        <TableCell>
+                          <Typography
+                            sx={{
+                              fontSize: "15px",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {key}
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography
+                            sx={{
+                              fontSize: "15px",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {value ? "✅" : "❌"}
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </DashboardCard>
             </Grid>
             <Grid item xs={12} lg={4}>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignContent: "center",
-                  justifyContent: "center",
-                  padding:"10px"
-                }}
-              >
-                <Typography variant="subtitle2" fontWeight={600}>
-                  Thing Permission
-                </Typography>
-              </Box>
-              <Table>
-                <TableBody>
-                  {Object.entries(thing).map(([key, value]) => (
-                    <TableRow key={key}>
-                      <TableCell>
-                        <Typography
-                          sx={{
-                            fontSize: "15px",
-                            fontWeight: "500",
-                          }}
-                        >
-                          {key}
-                        </Typography>
-                      </TableCell>
-                      <TableCell>
-                        <Typography
-                          sx={{
-                            fontSize: "15px",
-                            fontWeight: "500",
-                          }}
-                        >
-                          {value ? "✅" : "❌"}
-                        </Typography>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+              {/* */}
+              <DashboardCard title="Thing Permission">
+                <Table>
+                  <TableBody>
+                    {Object.entries(thing).map(([key, value]) => (
+                      <TableRow key={key}>
+                        <TableCell>
+                          <Typography
+                            sx={{
+                              fontSize: "15px",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {key}
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography
+                            sx={{
+                              fontSize: "15px",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {value ? "✅" : "❌"}
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </DashboardCard>
             </Grid>
             <Grid item xs={12} lg={4}>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignContent: "center",
-                  justifyContent: "center",
-                  padding:"10px"
-                }}
-              >
-                <Typography variant="subtitle2" fontWeight={600}>
-                  TopicRule Permission
-                </Typography>
-              </Box>
+              
+              <DashboardCard title="TopicRule Permission">
               <Table>
                 <TableBody>
                   {Object.entries(topicRule).map(([key, value]) => (
@@ -214,10 +186,12 @@ const IoTTable = ({ iotTable }: IoTTableProps) => {
                   ))}
                 </TableBody>
               </Table>
+              </DashboardCard>
+              
             </Grid>
           </Grid>
         </Box>
-      </DashboardCard>
+      </Box>
     );
   } else {
     return (

@@ -97,7 +97,7 @@ const InputField = ({ setIoTTable }: InputFieldProps) => {
         />
         
 
-        <FormLabel component="legend">choose AWS Service to test:</FormLabel>
+        <FormLabel component="legend" sx={{mt:"10px"}}>choose AWS Service to test:</FormLabel>
         <FormGroup sx={{ flexDirection: "row" }}>
           <FormControlLabel control={<Checkbox defaultChecked />} label="IoT" />
           <FormControlLabel

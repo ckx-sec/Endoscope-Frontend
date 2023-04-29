@@ -13,9 +13,12 @@ import {
   IconActivity,
   IconLayoutDashboard,
   IconListDetails,
+  IconLogin,
+  IconRegistered,
   IconReportAnalytics,
   IconScan,
   IconTerminal2,
+  IconUserPlus,
 } from "@tabler/icons";
 import { ReactNode } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
@@ -155,6 +158,20 @@ const Sidebar = ({}: SidebarProps) => {
                 />
               </List>
             </List>
+            <ListSubheaderStyled>Auth</ListSubheaderStyled>
+              <List>
+                <MyListItem
+                  icon={<IconUserPlus />}
+                  title={<div>Register</div>}
+                  href={"/auth/register"}
+                />
+                <MyListItem
+                  icon={<IconLogin />}
+                  title={<div>Login</div>}
+                  href={"/auth/login"}
+                />
+              
+              </List>
           </Box>
           
         </Box>

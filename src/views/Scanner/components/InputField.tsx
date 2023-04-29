@@ -92,7 +92,7 @@ const InputField = ({ setScanMessage }: InputFieldProps) => {
             setPattern(event.target.value);
           }}
         />
-        <FormLabel component="legend">choose the files want to scan:</FormLabel>
+        <FormLabel component="legend" sx={{mt:"10px"}}>choose the files want to scan:</FormLabel>
         <FormGroup sx={{ flexDirection: "row" }}>
           <FormControlLabel
             control={<Checkbox defaultChecked />}
