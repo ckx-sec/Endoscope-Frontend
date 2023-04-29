@@ -6,12 +6,10 @@ import {
   FormControlLabel,
   FormGroup,
   FormLabel,
-  IconButton,
   Snackbar,
   TextField,
   Typography,
 } from "@mui/material";
-import { IconDirection, IconUpload } from "@tabler/icons";
 import { useState } from "react";
 import DashboardCard from "../../../components/shared/DashboardCard";
 

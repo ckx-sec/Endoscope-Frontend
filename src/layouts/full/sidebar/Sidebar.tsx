@@ -14,14 +14,13 @@ import {
   IconLayoutDashboard,
   IconListDetails,
   IconLogin,
-  IconRegistered,
   IconReportAnalytics,
   IconScan,
   IconTerminal2,
   IconUserPlus,
 } from "@tabler/icons";
 import { ReactNode } from "react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import Logo from "../../../components/shared/Logo";
 
 const ListSubheaderStyled = (props: ListSubheaderProps) => (

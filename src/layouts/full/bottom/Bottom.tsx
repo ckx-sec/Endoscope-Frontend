@@ -2,10 +2,7 @@ import { Box, Fab, Tooltip } from "@mui/material";
 import {
   IconBrandBaidu,
   IconBrandGithub,
-  IconBrandGmail,
   IconBrandGoogle,
-  IconBrandMailgun,
-  IconBrandTwitter,
 } from "@tabler/icons";
 
 const Bottom = () => {

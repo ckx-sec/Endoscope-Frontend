@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/evaluator",
-        element: <Detector />,
+        element: <Error />,
       },
     ],
   },

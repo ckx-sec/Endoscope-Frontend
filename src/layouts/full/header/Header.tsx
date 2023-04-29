@@ -3,12 +3,10 @@ import {
   Badge,
   Box,
   Stack,
-  Button,
   AppBar,
   Toolbar,
 } from "@mui/material";
 import { IconBellRinging, IconMenu } from "@tabler/icons";
-import React from "react";
 import Profile from "./Profile";
 
 interface headerProps{

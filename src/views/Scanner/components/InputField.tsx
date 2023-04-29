@@ -1,27 +1,17 @@
 import {
-  
   Alert,
-  AlertTitle,
   Box,
   Button,
   Checkbox,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
   FormControlLabel,
   FormGroup,
   FormLabel,
   IconButton,
   Snackbar,
-  SnackbarProps,
   TextField,
   Typography,
-  makeStyles,
-  styled,
 } from "@mui/material";
-import { IconDirection, IconUpload } from "@tabler/icons";
+import { IconUpload } from "@tabler/icons";
 import { useState } from "react";
 import DashboardCard from "../../../components/shared/DashboardCard";
 interface UploadButtonProps {

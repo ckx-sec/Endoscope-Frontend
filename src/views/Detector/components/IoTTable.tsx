@@ -1,26 +1,15 @@
-import React from "react";
+
 import {
   Typography,
   Box,
   Table,
   TableBody,
   TableCell,
-  TableHead,
   TableRow,
   Chip,
-  IconButton,
-  Collapse,
-  TableContainer,
-  Paper,
-  List,
-  ListItem,
-  ListItemText,
-  Card,
-  CardContent,
   Grid,
 } from "@mui/material";
 import DashboardCard from "../../../components/shared/DashboardCard";
-import { IconChevronDown, IconChevronUp } from "@tabler/icons";
 
 interface policy {
   list: boolean;

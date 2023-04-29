@@ -1,5 +1,4 @@
-import { Box, Card, Chip, CircularProgress, Typography } from "@mui/material";
-import { alignProperty } from "@mui/material/styles/cssUtils";
+import {  Chip,Typography } from "@mui/material";
 import DashboardCard from "../../../components/shared/DashboardCard";
 
 interface PackageCardProps {

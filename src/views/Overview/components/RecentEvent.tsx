@@ -1,4 +1,4 @@
-import React from 'react';
+
 import DashboardCard from '../../../components/shared/DashboardCard';
 import {
   Timeline,
@@ -10,7 +10,7 @@ import {
   TimelineContent,
   timelineOppositeContentClasses,
 } from '@mui/lab';
-import { Link, Typography } from '@mui/material';
+import {  Typography } from '@mui/material';
 
 const RecentEvents = () => {
   return (

@@ -3,15 +3,13 @@ import {
   Box,
   Button,
   Checkbox,
-  CircularProgress,
   FormControlLabel,
   FormGroup,
   IconButton,
   Snackbar,
-  TextField,
   Typography,
 } from "@mui/material";
-import { IconDirection, IconUpload } from "@tabler/icons";
+import { IconUpload } from "@tabler/icons";
 import { useRef, useState } from "react";
 import DashboardCard from "../../../components/shared/DashboardCard";
 
