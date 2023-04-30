@@ -98,7 +98,7 @@ const InputField = ({
                 const formData = new FormData();
                 formData.append("file", file);
                 await fetch(
-                  "http://localhost:4000/api/backend/v1/describer/getapkinfo",
+                  "http://43.138.43.114:4000/api/backend/v1/describer/getapkinfo",
                   {
                     method: "POST",
                     body: formData,

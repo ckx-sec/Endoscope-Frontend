@@ -111,7 +111,7 @@ const InputField = ({ setScanMessage }: InputFieldProps) => {
               formData.append("file", file);
               formData.append("pattern", pattern);
               await fetch(
-                "http://localhost:4000/api/backend/v1/scanner/scan_apk",
+                "http://43.138.43.114:4000/api/backend/v1/scanner/scan_apk",
                 {
                   method: "POST",
                   body: formData,

@@ -126,7 +126,7 @@ const InputField = ({ setIoTTable }: InputFieldProps) => {
                 formData.append("filename", name);
               }
               await fetch(
-                "http://localhost:4000/api/backend/v1/detector/detect_iot_api",
+                "http://43.138.43.114:4000/api/backend/v1/detector/detect_iot_api",
                 {
                   method: "POST",
                   body: formData,
