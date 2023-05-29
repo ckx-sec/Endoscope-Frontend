@@ -15,6 +15,7 @@ import BlankLayout from "./layouts/blank/BlankLayout";
 import Error from "./views/Authentication/Error";
 import Register from "./views/Authentication/Register";
 import Login from "./views/Authentication/Login";
+import Evaluator from "./views/Evaluator/Evaluator";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/evaluator",
-        element: <Error />,
+        element: <Evaluator />,
       },
     ],
   },

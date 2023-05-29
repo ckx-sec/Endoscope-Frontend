@@ -4,6 +4,7 @@ import Sidebar from "../layouts/full/sidebar/Sidebar";
 import { Outlet } from "react-router";
 import Header from "../layouts/full/header/Header";
 import Bottom from "../layouts/full/bottom/Bottom";
+import Footer from "../layouts/full/footer/Footer";
 
 const Root = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -14,7 +15,7 @@ const Root = () => {
       <Box
         display="flex"
         flexGrow={1}
-        pb="60px"
+        pb="20px"
         flexDirection="column"
         zIndex={1}
         bgcolor="transparent"
@@ -30,7 +31,11 @@ const Root = () => {
             <Outlet />
           </Box>
         </Container>
+
+        
         <Bottom />
+        <Footer />
+        
       </Box>
     </Box>
   );

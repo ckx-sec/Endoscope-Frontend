@@ -11,8 +11,8 @@ const APKInfoCard= () =>{
         <CardMedia
           component="img"
           height="275"
-          image="/apklogotest.png"
-          alt="apkinfo"
+          // image="/qapklogotest.png"
+          // alt="apkinfo"
         />
         {/* <CardContent>
           <Typography gutterBottom variant="h5" component="div">
